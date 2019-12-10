@@ -3,17 +3,33 @@
 
 Automatically adds repository size to GitHub's repository summary.
 
+[![Featured on Product Hunt](./product-hunt.png)](https://www.producthunt.com/tech/github-repository-size) [![Install from chrome web store](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_340x96.png)](https://chrome.google.com/webstore/detail/github-repository-size/apnjnioapinblneaedefcnopcjepgkci)
+
 
 ## Screenshot
 
 ![Screenshot of repository size on GitHub](https://raw.githubusercontent.com/harshjv/github-repo-size/master/screenshot.png)
 
 
-## Installation
+## Private Repository
 
-[![Install from chrome web store](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_340x96.png)](https://chrome.google.com/webstore/detail/github-repository-size/apnjnioapinblneaedefcnopcjepgkci)
+To enable viewing size of private repositories;
 
-Install extension from [Chrome Web Store](https://chrome.google.com/webstore/detail/github-repository-size/apnjnioapinblneaedefcnopcjepgkci)
+1. Install extension from chrome webstore, if you haven't.
+2. Go to https://github.com/settings/tokens to generate your personal access token.
+  - Check `repo` scope to enable this extension on private repo.
+3. Click on the Github Repo Size extension (this extension)'s icon aside the address bar.
+4. Paste your access token there in the prompt box.
+
+### Temporarily override then token
+
+You can set `x-github-token` in `localStorage` to your access token, and the extension will use this value even if you've previously set token.
+
+    localStorage.setItem('x-github-token', <YOUR-PERSONAL-ACCESS-TOKEN>)
+
+and then remove it to use previously set token;
+
+    localStorage.removeItem('x-github-token')
 
 
 ## Development
